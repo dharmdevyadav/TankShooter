@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -7948400249818932287}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitEffect: {fileID: 5687045899791165040, guid: a0a4a29152db3274bb3165d3b8f19681, type: 3}
+  EnemyHitEffect: {fileID: 926626464912100924, guid: 33cfd25fdd091bd4d84230c40a9b5277, type: 3}
+  damage: 1
 --- !u!50 &-7948400249818932287
 Rigidbody2D:
   serializedVersion: 4
