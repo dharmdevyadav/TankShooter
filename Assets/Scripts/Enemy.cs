@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     {
         Player=FindObjectOfType<TankMovement>().transform;
         EnemyBonus = FindAnyObjectByType<BonusHandler>();
+        PlayerPrefs.SetString("bonuspoint", EnemyBonus.BonusPointText.text);
     }
     void Update()
     {
@@ -24,16 +25,17 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.tag == "Bullet")
         {
             TakeDamage(other.gameObject.GetComponent<Bullet>().damage);
-            bonuspoint += 10;
-            EnemyBonus.BonusPointText.text = "BONUS:" + bonuspoint.ToString();
+            if (Health <= 0)
+            {
+                bonuspoint += 10;
+                EnemyBonus.BonusPointText.text = "BONUS:" + bonuspoint.ToString();
+                PlayerPrefs.SetString("bonuspoint", EnemyBonus.BonusPointText.text);
+                Destroy(gameObject);
+            }
         }
     }
     void TakeDamage(int damageAmount)
     {
         Health -= damageAmount;
-        if(Health <= 0)
-        { 
-            Destroy(gameObject);
-        }
     }
 }

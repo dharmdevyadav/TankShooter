@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     
     void Update()
     {
-        timeBetweenSpawn = Random.Range(4, 12);
+        timeBetweenSpawn = Random.Range(3, 12);
         if (Time.time > NextspawnTime)
         {
             NextspawnTime = Time.time+timeBetweenSpawn;

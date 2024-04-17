@@ -5,12 +5,18 @@ public class Shooting : MonoBehaviour
   [SerializeField] GameObject BulletPrefeb;
   [SerializeField] Transform bulletPos;
   public float BulletForce = 20f;
+  public bool isOver = false;
 
   private void Update()
   {
-    if (Input.GetButtonDown("Fire1")){
-      Shoot();
-    }
+        if (!isOver)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Shoot();
+            }
+        }
+   
   }
   public void Shoot()
   {
