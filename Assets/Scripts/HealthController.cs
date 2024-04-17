@@ -11,14 +11,15 @@ public class HealthController : MonoBehaviour
     [SerializeField] GameObject BonusObj;
     [SerializeField] GameObject HealthBar;
     Shooting ToCheckOverGame;
-    Coins coinScript;
+    //Coins coinScript;
     BonusHandler EnemyBonus;
+    ScoreManager score;
 
     private void Start()
     {
         ToCheckOverGame = FindAnyObjectByType<Shooting>();
-        coinScript = FindAnyObjectByType<Coins>();
-        EnemyBonus = FindAnyObjectByType<BonusHandler>();
+        //coinScript = FindAnyObjectByType<Coins>();
+        score = FindObjectOfType<ScoreManager>();
         healthSlider.value =1;
     }
 
@@ -31,8 +32,8 @@ public class HealthController : MonoBehaviour
             {
                 gameOverPanel.SetActive(true);
                 Time.timeScale = 0;
-                Debug.Log("After Visible Page Score" + coinScript.CoinText.text);
-                Debug.Log("After Visible Page Score" + EnemyBonus.BonusPointText.text);
+                score.coinText.text = "You Have Finally Collected "+Coins.FinalScore.ToString()+" Coins!";
+                score.BonusText.text = "You Have Won " + Enemy.bonusint.ToString()+ " Bonus Points!";
                 ToCheckOverGame.isOver = true;
                 CoinObj.SetActive(false);
                 BonusObj.SetActive(false);

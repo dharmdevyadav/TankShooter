@@ -7,7 +7,8 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 public class Coins : MonoBehaviour
 {
     public TextMeshProUGUI CoinText;
-    public int currentscore=0;
+    public static int currentscore;
+    public static int FinalScore;
 
     private void Start()
     {
@@ -21,8 +22,8 @@ public class Coins : MonoBehaviour
         PlayerMovement.CoinCollected++;
         currentscore =PlayerMovement.CoinCollected;
         CoinText.text="Coins :" + currentscore.ToString();
-        PlayerPrefs.SetString("currentscore", CoinText.text);
-        Debug.Log(CoinText.text);
+        PlayerPrefs.SetString("currentscore", currentscore.ToString());
+        FinalScore = currentscore;
         }
     
   }

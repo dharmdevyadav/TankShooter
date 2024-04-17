@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
         else
         {
             GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-            Destroy(effect, 1f);
+            Destroy(effect, 0.7f);
             Destroy(gameObject);
         }
 

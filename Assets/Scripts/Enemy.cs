@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     private Transform Player;
     public int Health;
     public static int bonuspoint;
+    public static int bonusint;
 
     void Start()
     {
@@ -29,7 +30,8 @@ public class Enemy : MonoBehaviour
             {
                 bonuspoint += 10;
                 EnemyBonus.BonusPointText.text = "BONUS:" + bonuspoint.ToString();
-                PlayerPrefs.SetString("bonuspoint", EnemyBonus.BonusPointText.text);
+                PlayerPrefs.SetString("bonuspoint", bonuspoint.ToString());
+                bonusint = bonuspoint;
                 Destroy(gameObject);
             }
         }

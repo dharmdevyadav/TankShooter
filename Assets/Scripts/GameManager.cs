@@ -8,9 +8,13 @@ public class GameManager : MonoBehaviour
     public  GameObject BonusText;
     public  GameObject HealthBar;
 
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
     public void RestartGame()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         Time.timeScale = 1;
         PlayerMovement.CoinCollected = 0;
         Enemy.bonuspoint = 0;

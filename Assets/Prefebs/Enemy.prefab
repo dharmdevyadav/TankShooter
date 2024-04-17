@@ -202,7 +202,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 2.3
   Health: 2
-  Boundary: {fileID: 2301361219310156219, guid: 168bc3d0cc75d864c9d00167e1a01034, type: 3}
 --- !u!1 &1080115596115318673
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,8 +805,8 @@ Transform:
   m_GameObject: {fileID: 4174326048481623090}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.547202, y: 6.22352, z: 5.885126}
+  m_LocalPosition: {x: 0, y: -0.00000024503, z: 0}
+  m_LocalScale: {x: 16.595657, y: 15.775198, z: 14.917447}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3880600534085144936}
