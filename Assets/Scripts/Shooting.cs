@@ -6,13 +6,19 @@ public class Shooting : MonoBehaviour
   [SerializeField] Transform bulletPos;
   public float BulletForce = 20f;
   public bool isOver = false;
+  AudioSource FireSound;
 
-  private void Update()
+    private void Start()
+    {
+        FireSound=GetComponent<AudioSource>();
+    }
+    private void Update()
   {
         if (!isOver)
         {
             if (Input.GetButtonDown("Fire1"))
             {
+                FireSound.Play();
                 Shoot();
             }
         }
