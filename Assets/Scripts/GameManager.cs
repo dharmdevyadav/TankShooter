@@ -4,10 +4,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     GameManager Instance;
-    public  GameObject CoinText;
-    public  GameObject BonusText;
-    public  GameObject HealthBar;
-
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -18,9 +14,6 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         PlayerMovement.CoinCollected = 0;
         Enemy.bonuspoint = 0;
-        CoinText.SetActive(true);
-        BonusText.SetActive(true);
-        HealthBar.SetActive(true);
     }
 
     public void QuitGame()

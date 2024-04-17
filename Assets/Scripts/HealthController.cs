@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
 
 public class HealthController : MonoBehaviour
 {
@@ -11,14 +10,12 @@ public class HealthController : MonoBehaviour
     [SerializeField] GameObject BonusObj;
     [SerializeField] GameObject HealthBar;
     Shooting ToCheckOverGame;
-    //Coins coinScript;
     BonusHandler EnemyBonus;
     ScoreManager score;
 
     private void Start()
     {
         ToCheckOverGame = FindAnyObjectByType<Shooting>();
-        //coinScript = FindAnyObjectByType<Coins>();
         score = FindObjectOfType<ScoreManager>();
         healthSlider.value =1;
     }
@@ -35,9 +32,6 @@ public class HealthController : MonoBehaviour
                 score.coinText.text = "You Have Finally Collected "+Coins.FinalScore.ToString()+" Coins!";
                 score.BonusText.text = "You Have Won " + Enemy.bonusint.ToString()+ " Bonus Points!";
                 ToCheckOverGame.isOver = true;
-                CoinObj.SetActive(false);
-                BonusObj.SetActive(false);
-                HealthBar.SetActive(false);
                 PlayerMovement.CoinCollected = 0;
                 Enemy.bonuspoint = 0;
             }
