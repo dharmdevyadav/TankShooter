@@ -9,12 +9,13 @@ public class CoinSpawner : MonoBehaviour
     public Transform[] CoinPoint;
     void Update()
     {
-        timeBetweenSpawn = Random.Range(6, 15);
+        timeBetweenSpawn = Random.Range(3, 10);
         if (Time.time > NextspawnTime)
         {
             NextspawnTime = Time.time + timeBetweenSpawn;
             Transform randomSpawnPoint = CoinPoint[Random.Range(0, CoinPoint.Length)];
-            Instantiate(Coin, randomSpawnPoint.position, Quaternion.identity);
+            var coinPrefeb=Instantiate(Coin, randomSpawnPoint.position, Quaternion.identity);
+            Destroy(coinPrefeb,6);
         }
         
     }

@@ -32,11 +32,15 @@ public class HealthController : MonoBehaviour
                 score.coinText.text = "You Have Finally Collected "+Coins.FinalScore.ToString()+" Coins!";
                 score.BonusText.text = "You Have Won " + Enemy.bonusint.ToString()+ " Bonus Points!";
                 ToCheckOverGame.isOver = true;
-                PlayerMovement.CoinCollected = 0;
-                Enemy.bonuspoint = 0;
+                AllClear();
             }
         }
 
        
+    }
+    public void AllClear()
+    {
+        PlayerMovement.CoinCollected = 0;
+        Enemy.bonuspoint = 0;
     }
 }
